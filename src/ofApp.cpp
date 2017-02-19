@@ -6,6 +6,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    
     //GUI
     GUI.setup();
     GUI.add(xRotation.setup("X Rotation: ", 0, 0, 360));
@@ -17,10 +18,8 @@ void ofApp::setup(){
     //    GUI.add(pause.setup("Pause Video"));
     
     //OSC SETUP
-    //--------------------
-    //--------------------
-    //--------------------
-    //--------------------
+    receive.setup(PORT);
+    // ( ))( //
     
     std::clock_t start;
     double duration;
@@ -57,6 +56,11 @@ void ofApp::setup(){
     clock_t startTime = clock();
 }
 
+void oscError(std::string &what) {
+    cout << "we" << endl;
+    ofLogWarning() << what;
+}
+
 //--------------------------------------------------------------
 void ofApp::update(){
     if (stop_and_PlayBack == true) {//loads XML file
@@ -69,6 +73,18 @@ void ofApp::update(){
     }
     
     //OSC RECIEVING LOOP
+    while(receive.hasWaitingMessages()) {
+        ofxOscMessage m;
+        receive.getNextMessage(&m);
+        
+        if(m.getAddress() == "/1/fader3") {
+            oscX = m.getArgAsFloat(0);
+        }
+        std::cout << oscX << std::endl;
+    }
+    
+    
+    
     //--------------------
     //--------------------
     //--------------------
@@ -102,6 +118,9 @@ void ofApp::update(){
     string zoomXML = ben.getXMLStringForKeyframes(zoomkeyframes);
     final.update();
 //    std::cout << "hello world";
+    
+    /*
+    
     std::cout << "x" << std::endl;
     std::cout << xRotXML << std::endl;
     std::cout << "y" << std::endl;
@@ -120,6 +139,8 @@ void ofApp::update(){
     std::ofstream zoomoutfile ("zoom.xml");
     zoomoutfile << zoomXML << std::endl;
     zoomoutfile.close();
+    
+    */
 }
 
 //--------------------------------------------------------------

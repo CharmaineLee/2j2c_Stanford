@@ -3,8 +3,10 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "ofxTimeline.h"
+#include "ofxOsc.h"
 #include <vector>
 
+#define PORT 9000
 
 class ofApp : public ofBaseApp{
     
@@ -87,4 +89,8 @@ public:
     ofxButton play;
     ofxButton pause;
     ofxToggle stop_and_PlayBack;
+    
+    ofxOscReceiver receive;
+    float oscX = 0.0;
+    
 };

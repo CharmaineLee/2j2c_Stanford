@@ -1,6 +1,7 @@
 ofxAudioDecoder
 ofxGui
 ofxMSATimer
+ofxOsc
 ofxPowerMate
 ofxRange
 ofxTextInputField
