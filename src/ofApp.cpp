@@ -7,7 +7,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-//    //GUI
+    //GUI
     GUI.setup();
     GUI.add(xRotation.setup("X Rotation: ", 0, 0, 360));
     GUI.add(yRotation.setup("Y Rotation: ", 0, 0, 360));
@@ -18,7 +18,7 @@ void ofApp::setup(){
     //    GUI.add(pause.setup("Pause Video"));
     
     //OSC SETUP
-//    receiver.setup(9000);
+    receive.setup(PORT);
     
     std::clock_t start;
     double duration;
@@ -55,6 +55,11 @@ void ofApp::setup(){
     clock_t startTime = clock();
 }
 
+void oscError(std::string &what) {
+    cout << "we" << endl;
+    ofLogWarning() << what;
+}
+
 //--------------------------------------------------------------
 void ofApp::update(){
     if (stop_and_PlayBack == true && buttonClickTracker == 0) {//loads XML file
@@ -69,7 +74,15 @@ void ofApp::update(){
     }
     
     //OSC RECIEVING LOOP
-
+    while(receive.hasWaitingMessages()) {
+        ofxOscMessage m;
+        receive.getNextMessage(&m);
+        
+        if(m.getAddress() == "/1/fader3") {
+            oscX = m.getArgAsFloat(0);
+        }
+        std::cout << oscX << std::endl;
+    }
     
     ofxTLKeyframe* rotationXframe = new ofxTLKeyframe();
     ofxTLKeyframe* rotationYframe = new ofxTLKeyframe();
