@@ -18,7 +18,7 @@ void ofApp::setup(){
     //    GUI.add(pause.setup("Pause Video"));
     
     //OSC SETUP
-    receive.setup(PORT);
+    receive.setup(9000);
     // ( ))( //
     
     std::clock_t start;
