@@ -5,6 +5,7 @@
 #include "ofxTimeline.h"
 #include "ofxOsc.h"
 #include <vector>
+#include "ofxPowerMate.h"
 
 #define PORT 9000
 
@@ -72,20 +73,23 @@ public:
     //    //DRAWING SURFACE
     //    ofFbo fullScan;
     
-    float globalSpinVol;
-    int globalClick;
-    
     int buttonClickTracker;
     
     //VARS FROM OSC
     int zoomVar; //ZOOM VARIABLE, -200,850
     int xRot; //X-ROTATION VARIABLE, 0,360
     int yRot; //Y-ROTATION VARIABLE, 0,360
+    //int opticalRegion; // 1,1,3
+    
     //GUI
     ofxPanel GUI;
-    ofxIntSlider zoomAmount;
     ofxIntSlider xRotation;
     ofxIntSlider yRotation;
+    ofxIntSlider zoomAmount;
+    
+    
+    
+    ofxIntSlider opticalRegion;
     
     ofxButton play;
     ofxButton pause;
@@ -93,5 +97,11 @@ public:
     
     ofxOscReceiver receive;
     float oscX = 0.0;
+    
+    //POWER-MATE
+    void onPowerMateData(powerData& d);
+    ofxPowerMate powerMate;
+    int globalSpinVol;
+    int globalClick;
     
 };

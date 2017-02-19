@@ -13,6 +13,7 @@ void ofApp::setup(){
     GUI.add(yRotation.setup("Y Rotation: ", 0, 0, 360));
     GUI.add(zoomAmount.setup("Zoom: ", 0, -200,850));
     GUI.add(stop_and_PlayBack.setup("REPLAY", false));
+    GUI.add(opticalRegion.setup("Region Select", 1, 1, 3));
     
     //    GUI.add(play.setup("Play Video"));
     //    GUI.add(pause.setup("Pause Video"));
@@ -33,7 +34,7 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     ofEnableSmoothing();
     
-    final.load("360_0096_CLIPCHAMP_keep.mp4");
+    final.load("Main_Video.mp4");
     faithImage.update();
     
     ofDisableAlphaBlending();
@@ -56,12 +57,69 @@ void ofApp::setup(){
     buttonClickTracker = 0;
     
     clock_t startTime = clock();
+    
+    //POWER-MATE
+    powerMate.conecta();
+    ofAddListener(powerMate.tengoInfo, this, &ofApp::onPowerMateData);
+    powerMate.setBrillo(240);
 }
 
 void oscError(std::string &what) {
-    cout << "we" << endl;
+    //cout << "we" << endl;
     ofLogWarning() << what;
+
 }
+
+
+//--------------------------------------------------------------
+
+
+void ofApp::onPowerMateData(powerData& d){
+    // d.presionado is 1 (currently pressed) or 0 (not)
+    
+
+
+    
+    if (opticalRegion == 1) { // X-REGION
+        if (d.rollVar < 0) {
+            d.rollVar = (-10.0) * d.rollVar*d.rollVar;
+        } else {
+            d.rollVar = (10.0)*d.rollVar*d.rollVar;
+        }
+        
+        xRotation = xRotation + d.rollVar;
+//        cout << "X CH" << endl;
+    }
+    
+    if (opticalRegion == 2) { // X-REGION
+        if (d.rollVar < 0) {
+            d.rollVar = (-10.0) * d.rollVar*d.rollVar;
+        } else {
+            d.rollVar = (10.0)*d.rollVar*d.rollVar;
+        }
+        
+        yRotation = yRotation + d.rollVar;
+
+        //cout << "Y CH" << endl;
+
+    }
+    
+    if (opticalRegion == 3) { // X-REGION
+        if (d.rollVar < 0) {
+            d.rollVar = (-10.0) * d.rollVar*d.rollVar;
+        } else {
+            d.rollVar = (10.0)*d.rollVar*d.rollVar;
+        }
+        
+        zoomAmount = zoomAmount + d.rollVar;
+        
+        //cout << "Z CH" << endl;
+    }
+    
+    globalSpinVol = globalSpinVol + d.rollVar;
+    globalClick = d.presionado;
+}
+
 
 //--------------------------------------------------------------
 void ofApp::update(){
@@ -72,7 +130,7 @@ void ofApp::update(){
         timeline.addCurves("Zoom",     ofRange(-200,850));
         buttonClickTracker = 1;
     } else if (stop_and_PlayBack == false) {
-        timeline.reset();
+//        timeline.reset();
         buttonClickTracker = 0;
     }
     
@@ -81,10 +139,12 @@ void ofApp::update(){
         ofxOscMessage m;
         receive.getNextMessage(&m);
         
-        if(m.getAddress() == "/1/fader3") {
-            oscX = m.getArgAsFloat(0);
+        if(m.getAddress() == "/1/op-region") {
+            opticalRegion = m.getArgAsInt(0);
         }
-        std::cout << oscX << std::endl;
+        
+        //if (other addresses)
+        
     }
     
     ofxTLKeyframe* rotationXframe = new ofxTLKeyframe();
@@ -142,7 +202,7 @@ void ofApp::draw(){
     //        std::cout << stored.at(i) << std::endl;
     //    }
     
-    ofBackground(210,70,10);
+    ofBackground(240,240,240);
     
     ofPushMatrix();
     ofPushStyle();
