@@ -4,9 +4,17 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    
+    std::clock_t start;
+    double duration;
+    
+    start = std::clock();
+    
+    
     ofSetFrameRate(60);
     ofSetVerticalSync(true);
     ofEnableSmoothing();
+    
     
     final.load("Test_File.mp4");
     faithImage.update();
@@ -33,11 +41,18 @@ void ofApp::setup(){
     
     //defining global variables
     buttonClickTracker = 0;
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     ofxTLKeyframe* frames = new ofxTLKeyframe();
+    frames->time = std::clock();
+    if (globalSpinVol == 0) {
+        frames->value = globalSpinVol;
+    } else {
+        frames->value = 1/globalSpinVol;
+    }
     
     keyframes.push_back(frames);
     
