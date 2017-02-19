@@ -1,2 +1,7 @@
-
 *.mp4
+*.xml
+*.xcuserstate
+*.xcscmblueprint
+*.xcbkptlist
+
+*.tiff

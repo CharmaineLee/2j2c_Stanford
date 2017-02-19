@@ -6,6 +6,21 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    //GUI
+    GUI.setup();
+    GUI.add(xRotation.setup("X Rotation: ", 0, 0, 360));
+    GUI.add(yRotation.setup("Y Rotation: ", 0, 0, 360));
+    GUI.add(zoomAmount.setup("Zoom: ", 0, -200,850));
+    GUI.add(stop_and_PlayBack.setup("REPLAY", false));
+    
+    //    GUI.add(play.setup("Play Video"));
+    //    GUI.add(pause.setup("Pause Video"));
+    
+    //OSC SETUP
+    //--------------------
+    //--------------------
+    //--------------------
+    //--------------------
     
     std::clock_t start;
     double duration;
@@ -17,10 +32,9 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     ofEnableSmoothing();
     
-    
     final.load("360_0096_CLIPCHAMP_keep.mp4");
     faithImage.update();
-
+    
     ofDisableAlphaBlending();
     ofEnableDepthTest();
     //glEnable(GL_DEPTH_TEST);
@@ -37,10 +51,6 @@ void ofApp::setup(){
     timeline.setDurationInFrames(60*30);
     timeline.setLoopType(OF_LOOP_NORMAL);
     
-    //POWER-MATE
-    powerMate.conecta();
-    ofAddListener(powerMate.tengoInfo, this, &ofApp::onPowerMateData);
-    
     //defining global variables
     buttonClickTracker = 0;
     
@@ -49,6 +59,20 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    if (stop_and_PlayBack == true) {//loads XML file
+        timeline.addCurves("Rotate X", ofRange(0, 360));
+        timeline.addCurves("Rotate Y", ofRange(0, 360));
+        timeline.addCurves("Zoom",     ofRange(-200,850));
+        buttonClickTracker = 1;
+    } else {
+        timeline.clear();
+    }
+    
+    //OSC RECIEVING LOOP
+    //--------------------
+    //--------------------
+    //--------------------
+    
     ofxTLKeyframe* rotationXframe = new ofxTLKeyframe();
     ofxTLKeyframe* rotationYframe = new ofxTLKeyframe();
     ofxTLKeyframe* zoomframe = new ofxTLKeyframe();
@@ -69,12 +93,10 @@ void ofApp::update(){
     ofxTLKeyframe apple;
     //    apple.time = 0;
     //    apple.value = 1.1;
-    //
+
+
     ofxTLKeyframes ben;
-    //    ben.time = 0;
-    //    ben.value = 1.1;
-    //    ben.addKeyframe();
-    //    ben.save();
+
     string xRotXML = ben.getXMLStringForKeyframes(rotationXkeyframes);
     string yRotXML = ben.getXMLStringForKeyframes(rotationYkeyframes);
     string zoomXML = ben.getXMLStringForKeyframes(zoomkeyframes);
@@ -100,38 +122,12 @@ void ofApp::update(){
     zoomoutfile.close();
 }
 
-void ofApp::onPowerMateData(powerData& d){
-    // button click
-    if (d.presionado == 1) {
-//        slitHistoryI = slitHistoryI + 1;
-        //each call to "add keyframes" add's another track to the timeline
-        if (buttonClickTracker == 0) {
-            timeline.addCurves("Rotate X", ofRange(0, 360));  //loads XML file
-            timeline.addCurves("Rotate Y", ofRange(0, 360));
-            timeline.addCurves("Zoom",     ofRange(-200,850));
-            buttonClickTracker = 1;
-        }
-        else {
-            timeline.clear();
-            buttonClickTracker = 0;
-        }
-    }
-    else {
-       globalSpinVol = globalSpinVol + d.rollVar;
-        std::cout << globalSpinVol << std::endl;
-    }
-    
-   // globalClick = d.presionado;
-}
-
-
-
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
-//    for (int i = 0; i < stored.size(); i++) {
-//        std::cout << stored.at(i) << std::endl;
-//    }
+
+    //    for (int i = 0; i < stored.size(); i++) {
+    //        std::cout << stored.at(i) << std::endl;
+    //    }
     
     ofBackground(210,70,10);
     
@@ -139,7 +135,7 @@ void ofApp::draw(){
     ofPushStyle();
     {
         final.play();
-
+        
         ofEnableDepthTest();
         glMatrixMode(GL_TEXTURE);
         glPushMatrix();
@@ -149,18 +145,19 @@ void ofApp::draw(){
         
         ofPushMatrix();
         {
-            float zoomAmount = timeline.getValue("Zoom");
+            //float zoomAmount = timeline.getValue("Zoom");
             
             //ZOOM VARIABLE, -200,850
-            ofTranslate(ofGetWidth()/2.0, ofGetHeight()/2.0, globalSpinVol); // zoom amount 
+            
+            ofTranslate(ofGetWidth()/2.0, ofGetHeight()/2.0, zoomAmount); // zoom amount
             
             //Read the values out of the timeline and use them to change the viewport rotation
             
             //X-ROTATION VARIABLE, 0,360
-            ofRotate(globalSpinVol, 1, 0, 0);
+            ofRotate(xRotation, 1, 0, 0);
             
             //Y-ROTATION VARIABLE, 0,360
-            ofRotate(timeline.getValue("Rotate Y"), 0, 1, 0);
+            ofRotate(yRotation, 0, 1, 0);
             
             ofSetColor(255,255,255);
             final.getTexture().bind();
@@ -172,14 +169,13 @@ void ofApp::draw(){
         glMatrixMode(GL_TEXTURE);
         glPopMatrix();
     }
-
+    
     ofPopMatrix();
     ofPopStyle();
-     
+    
     glMatrixMode(GL_MODELVIEW);
     timeline.draw();
-    
-
+    GUI.draw();
 }
 
 //--------------------------------------------------------------
@@ -191,57 +187,55 @@ void ofApp::keyPressed(int key){
     else if (key == 'p'){
         final.stop();
     }
-    
-
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
-
+    
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseExited(int x, int y){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::gotMessage(ofMessage msg){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
+    
 }
