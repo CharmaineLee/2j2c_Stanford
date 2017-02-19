@@ -31,8 +31,8 @@ void ofApp::setup(){
     ofxTimeline::removeCocoaMenusFromGlut("CurvesColorsDemo");
     
     timeline.setup();
-    timeline.setFrameRate(100);
-    timeline.setDurationInFrames(20000);
+    timeline.setFrameRate(60);
+    timeline.setDurationInFrames(60*30);
     timeline.setLoopType(OF_LOOP_NORMAL);
     
     //POWER-MATE
@@ -42,18 +42,20 @@ void ofApp::setup(){
     //defining global variables
     buttonClickTracker = 0;
     
+    clock_t startTime = clock();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     ofxTLKeyframe* frames = new ofxTLKeyframe();
-    frames->time = std::clock();
-    if (globalSpinVol == 0) {
-        frames->value = globalSpinVol;
-    } else {
-        frames->value = 1/globalSpinVol;
-    }
-    
+    frames->time = clock();
+    frames->value = globalSpinVol;
+//    if (globalSpinVol == 0) {
+//        frames->value = globalSpinVol;
+//    } else {
+//        frames->value = (float) 1/globalSpinVol;
+//    }
+//    
     keyframes.push_back(frames);
     
 
@@ -92,6 +94,7 @@ void ofApp::onPowerMateData(powerData& d){
     }
     else {
        globalSpinVol = globalSpinVol + d.rollVar;
+        std::cout << globalSpinVol << std::endl;
     }
     
    // globalClick = d.presionado;
@@ -123,10 +126,16 @@ void ofApp::draw(){
         ofPushMatrix();
         {
             float zoomAmount = timeline.getValue("Zoom");
+            
+            //ZOOM VARIABLE, -200,850
             ofTranslate(ofGetWidth()/2.0, ofGetHeight()/2.0, globalSpinVol); // zoom amount 
             
             //Read the values out of the timeline and use them to change the viewport rotation
+            
+            //X-ROTATION VARIABLE, 0,360
             ofRotate(globalSpinVol, 1, 0, 0);
+            
+            //Y-ROTATION VARIABLE, 0,360
             ofRotate(timeline.getValue("Rotate Y"), 0, 1, 0);
             
             ofSetColor(255,255,255);

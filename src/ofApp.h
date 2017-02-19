@@ -71,11 +71,16 @@ class ofApp : public ofBaseApp{
     ofxPowerMate powerMate;
     
     
-    int slitHistoryI;
-    int globalSpinVol;
+    
+    float globalSpinVol;
     int globalClick;
     
-    int buttonClickTracker;
-
-		
+    //int buttonClickTracker;
+    
+    //VARS FROM OSC
+    int zoomVar; //ZOOM VARIABLE, -200,850
+    int xRot; //X-ROTATION VARIABLE, 0,360
+    int yRot; //Y-ROTATION VARIABLE, 0,360
+    
+		 
 };
