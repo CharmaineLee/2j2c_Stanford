@@ -1,6 +1,8 @@
 #include "ofApp.h"
 #include <vector>
 #include "ofxTLKeyframes.h"
+#include <iostream>
+#include <fstream>
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -47,31 +49,55 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    ofxTLKeyframe* frames = new ofxTLKeyframe();
-    frames->time = clock();
-    frames->value = globalSpinVol;
-//    if (globalSpinVol == 0) {
-//        frames->value = globalSpinVol;
-//    } else {
-//        frames->value = (float) 1/globalSpinVol;
-//    }
-//    
-    keyframes.push_back(frames);
+    ofxTLKeyframe* rotationXframe = new ofxTLKeyframe();
+    ofxTLKeyframe* rotationYframe = new ofxTLKeyframe();
+    ofxTLKeyframe* zoomframe = new ofxTLKeyframe();
     
-
+    clock_t time = clock();
+    rotationXframe->time = time;
+    rotationXframe->value = globalSpinVol;
+    rotationYframe->time = time;
+    rotationYframe->value = globalSpinVol;
+    zoomframe->time = time;
+    zoomframe->value = globalSpinVol;
+    
+    //vector<ofxTLKeyframe> objects
+    rotationXkeyframes.push_back(rotationXframe);
+    rotationYkeyframes.push_back(rotationYframe);
+    zoomkeyframes.push_back(zoomframe);
+    
     ofxTLKeyframe apple;
-    apple.time = 0;
-    apple.value = 1.1;
-//    
+    //    apple.time = 0;
+    //    apple.value = 1.1;
+    //
     ofxTLKeyframes ben;
-//    ben.time = 0;
-//    ben.value = 1.1;
-//    ben.addKeyframe();
-//    ben.save();
-    ben.getXMLStringForKeyframes(keyframes);
+    //    ben.time = 0;
+    //    ben.value = 1.1;
+    //    ben.addKeyframe();
+    //    ben.save();
+    string xRotXML = ben.getXMLStringForKeyframes(rotationXkeyframes);
+    string yRotXML = ben.getXMLStringForKeyframes(rotationYkeyframes);
+    string zoomXML = ben.getXMLStringForKeyframes(zoomkeyframes);
     final.update();
 //    std::cout << "hello world";
-    std::cout << ben.getXMLStringForKeyframes(keyframes) << std::endl;
+    std::cout << "x" << std::endl;
+    std::cout << xRotXML << std::endl;
+    std::cout << "y" << std::endl;
+    std::cout << yRotXML << std::endl;
+    std::cout << "zooms" << std::endl;
+    std::cout << zoomXML << std::endl;
+    
+    std::ofstream xoutfile ("xRot.xml");
+    xoutfile << xRotXML << std::endl;
+    xoutfile.close();
+    
+    std::ofstream youtfile ("yRot.xml");
+    youtfile << yRotXML << std::endl;
+    youtfile.close();
+    
+    std::ofstream zoomoutfile ("zoom.xml");
+    zoomoutfile << zoomXML << std::endl;
+    zoomoutfile.close();
 }
 
 void ofApp::onPowerMateData(powerData& d){
@@ -89,8 +115,6 @@ void ofApp::onPowerMateData(powerData& d){
             timeline.clear();
             buttonClickTracker = 0;
         }
-        
-
     }
     else {
        globalSpinVol = globalSpinVol + d.rollVar;

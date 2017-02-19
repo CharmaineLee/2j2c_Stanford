@@ -29,8 +29,12 @@ class ofApp : public ofBaseApp{
     ofLight light;
     
     ofxTimeline timeline;
-    vector<ofxTLKeyframe*> keyframes;
-    ofxTLKeyframe* frames = new ofxTLKeyframe();
+    vector<ofxTLKeyframe*> rotationXkeyframes;
+    vector<ofxTLKeyframe*> rotationYkeyframes;
+    vector<ofxTLKeyframe*> zoomkeyframes;
+    ofxTLKeyframe* rotationXframe = new ofxTLKeyframe();
+    ofxTLKeyframe* rotationYframe = new ofxTLKeyframe();
+    ofxTLKeyframe* zoomframe = new ofxTLKeyframe();
     ofSpherePrimitive faithBall;
     ofImage faithImage;
     ofEasyCam easyCam;
