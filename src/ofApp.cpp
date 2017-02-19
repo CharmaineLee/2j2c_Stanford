@@ -1,12 +1,22 @@
 #include "ofApp.h"
+#include <vector>
+#include "ofxTLKeyframes.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    
+    std::clock_t start;
+    double duration;
+    
+    start = std::clock();
+    
+    
     ofSetFrameRate(60);
     ofSetVerticalSync(true);
     ofEnableSmoothing();
     
-    final.load("Main_Video.mp4");
+    
+    final.load("Test_File.mp4");
     faithImage.update();
 
     ofDisableAlphaBlending();
@@ -25,33 +35,76 @@ void ofApp::setup(){
     timeline.setDurationInFrames(20000);
     timeline.setLoopType(OF_LOOP_NORMAL);
     
-    //each call to "add keyframes" add's another track to the timeline
-    timeline.addCurves("Rotate X", ofRange(0, 360));
-    timeline.addCurves("Rotate Y", ofRange(0, 360));
-    timeline.addCurves("Zoom",     ofRange(-200,850));
+    //POWER-MATE
+    powerMate.conecta();
+    ofAddListener(powerMate.tengoInfo, this, &ofApp::onPowerMateData);
     
-    //Flags are little markers that you can attach text to
-    //They are only useful when listening to bangFired() events
-    //so that you know when one has passed
-    //timeline.addColors("Colors");
+    //defining global variables
+    buttonClickTracker = 0;
     
-    //setting framebased to true results in the timeline never skipping frames
-    //and also speeding up with the
-    //try setting this to true and see the difference
-    timeline.setFrameBased(false);
-
-
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    ofxTLKeyframe* frames = new ofxTLKeyframe();
+    frames->time = std::clock();
+    if (globalSpinVol == 0) {
+        frames->value = globalSpinVol;
+    } else {
+        frames->value = 1/globalSpinVol;
+    }
+    
+    keyframes.push_back(frames);
+    
+
+    ofxTLKeyframe apple;
+    apple.time = 0;
+    apple.value = 1.1;
+//    
+    ofxTLKeyframes ben;
+//    ben.time = 0;
+//    ben.value = 1.1;
+//    ben.addKeyframe();
+//    ben.save();
+    ben.getXMLStringForKeyframes(keyframes);
     final.update();
-
-
+//    std::cout << "hello world";
+    std::cout << ben.getXMLStringForKeyframes(keyframes) << std::endl;
 }
+
+void ofApp::onPowerMateData(powerData& d){
+    // button click
+    if (d.presionado == 1) {
+//        slitHistoryI = slitHistoryI + 1;
+        //each call to "add keyframes" add's another track to the timeline
+        if (buttonClickTracker == 0) {
+            timeline.addCurves("Rotate X", ofRange(0, 360));  //loads XML file
+            timeline.addCurves("Rotate Y", ofRange(0, 360));
+            timeline.addCurves("Zoom",     ofRange(-200,850));
+            buttonClickTracker = 1;
+        }
+        else {
+            timeline.clear();
+            buttonClickTracker = 0;
+        }
+        
+
+    }
+    else {
+       globalSpinVol = globalSpinVol + d.rollVar;
+    }
+    
+   // globalClick = d.presionado;
+}
+
+
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    
+//    for (int i = 0; i < stored.size(); i++) {
+//        std::cout << stored.at(i) << std::endl;
+//    }
     
     ofBackground(210,70,10);
     
@@ -70,10 +123,10 @@ void ofApp::draw(){
         ofPushMatrix();
         {
             float zoomAmount = timeline.getValue("Zoom");
-            ofTranslate(ofGetWidth()/2.0, ofGetHeight()/2.0, zoomAmount);
+            ofTranslate(ofGetWidth()/2.0, ofGetHeight()/2.0, globalSpinVol); // zoom amount 
             
             //Read the values out of the timeline and use them to change the viewport rotation
-            ofRotate(timeline.getValue("Rotate X"), 1, 0, 0);
+            ofRotate(globalSpinVol, 1, 0, 0);
             ofRotate(timeline.getValue("Rotate Y"), 0, 1, 0);
             
             ofSetColor(255,255,255);

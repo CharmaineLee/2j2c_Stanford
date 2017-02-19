@@ -5,22 +5,844 @@
         <width>1024.000000000</width>
         <height>19.000000000</height>
     </element>
+    <element name="None">
+        <x>0.000000000</x>
+        <y>52.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_0">
+        <x>0.000000000</x>
+        <y>116.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_1">
+        <x>0.000000000</x>
+        <y>180.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_10">
+        <x>0.000000000</x>
+        <y>756.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_11">
+        <x>0.000000000</x>
+        <y>820.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_12">
+        <x>0.000000000</x>
+        <y>884.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_13">
+        <x>0.000000000</x>
+        <y>948.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_14">
+        <x>0.000000000</x>
+        <y>1012.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_15">
+        <x>0.000000000</x>
+        <y>1076.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_16">
+        <x>0.000000000</x>
+        <y>1140.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_17">
+        <x>0.000000000</x>
+        <y>1204.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_18">
+        <x>0.000000000</x>
+        <y>1268.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_19">
+        <x>0.000000000</x>
+        <y>1332.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_2">
+        <x>0.000000000</x>
+        <y>244.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_20">
+        <x>0.000000000</x>
+        <y>1396.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_21">
+        <x>0.000000000</x>
+        <y>1460.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_22">
+        <x>0.000000000</x>
+        <y>1524.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_23">
+        <x>0.000000000</x>
+        <y>1588.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_24">
+        <x>0.000000000</x>
+        <y>1652.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_25">
+        <x>0.000000000</x>
+        <y>1716.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_26">
+        <x>0.000000000</x>
+        <y>1780.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_27">
+        <x>0.000000000</x>
+        <y>1844.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_28">
+        <x>0.000000000</x>
+        <y>1908.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_29">
+        <x>0.000000000</x>
+        <y>1972.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_3">
+        <x>0.000000000</x>
+        <y>308.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_30">
+        <x>0.000000000</x>
+        <y>2036.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_31">
+        <x>0.000000000</x>
+        <y>2100.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_32">
+        <x>0.000000000</x>
+        <y>2164.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_33">
+        <x>0.000000000</x>
+        <y>2228.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_34">
+        <x>0.000000000</x>
+        <y>2292.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_35">
+        <x>0.000000000</x>
+        <y>2356.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_36">
+        <x>0.000000000</x>
+        <y>2420.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_37">
+        <x>0.000000000</x>
+        <y>2484.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_38">
+        <x>0.000000000</x>
+        <y>3446.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_39">
+        <x>0.000000000</x>
+        <y>3510.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_4">
+        <x>0.000000000</x>
+        <y>372.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_40">
+        <x>0.000000000</x>
+        <y>3574.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_41">
+        <x>0.000000000</x>
+        <y>3638.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_42">
+        <x>0.000000000</x>
+        <y>3702.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_43">
+        <x>0.000000000</x>
+        <y>3766.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_44">
+        <x>0.000000000</x>
+        <y>2932.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_45">
+        <x>0.000000000</x>
+        <y>2996.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_46">
+        <x>0.000000000</x>
+        <y>3060.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_47">
+        <x>0.000000000</x>
+        <y>3124.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_48">
+        <x>0.000000000</x>
+        <y>3894.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_49">
+        <x>0.000000000</x>
+        <y>3958.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_5">
+        <x>0.000000000</x>
+        <y>436.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_50">
+        <x>0.000000000</x>
+        <y>4214.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_6">
+        <x>0.000000000</x>
+        <y>500.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_7">
+        <x>0.000000000</x>
+        <y>564.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_8">
+        <x>0.000000000</x>
+        <y>628.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="None_9">
+        <x>0.000000000</x>
+        <y>692.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate C">
+        <x>0.000000000</x>
+        <y>52.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
     <element name="Rotate X">
         <x>0.000000000</x>
         <y>52.000000000</y>
         <width>1024.000000000</width>
         <height>127.000000000</height>
     </element>
+    <element name="Rotate X_0">
+        <x>0.000000000</x>
+        <y>758.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_1">
+        <x>0.000000000</x>
+        <y>950.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_10">
+        <x>0.000000000</x>
+        <y>2678.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_11">
+        <x>0.000000000</x>
+        <y>2870.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_12">
+        <x>0.000000000</x>
+        <y>3062.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_13">
+        <x>0.000000000</x>
+        <y>3254.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_14">
+        <x>0.000000000</x>
+        <y>3446.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_15">
+        <x>0.000000000</x>
+        <y>3638.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_16">
+        <x>0.000000000</x>
+        <y>3830.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_17">
+        <x>0.000000000</x>
+        <y>4022.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_18">
+        <x>0.000000000</x>
+        <y>4214.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_19">
+        <x>0.000000000</x>
+        <y>4406.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_2">
+        <x>0.000000000</x>
+        <y>1142.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_20">
+        <x>0.000000000</x>
+        <y>4598.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_21">
+        <x>0.000000000</x>
+        <y>4790.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_22">
+        <x>0.000000000</x>
+        <y>4982.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_23">
+        <x>0.000000000</x>
+        <y>5174.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_24">
+        <x>0.000000000</x>
+        <y>5366.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_25">
+        <x>0.000000000</x>
+        <y>5558.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_26">
+        <x>0.000000000</x>
+        <y>5750.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_27">
+        <x>0.000000000</x>
+        <y>5942.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_3">
+        <x>0.000000000</x>
+        <y>1334.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_4">
+        <x>0.000000000</x>
+        <y>1526.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_5">
+        <x>0.000000000</x>
+        <y>1718.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_6">
+        <x>0.000000000</x>
+        <y>1910.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_7">
+        <x>0.000000000</x>
+        <y>2102.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_8">
+        <x>0.000000000</x>
+        <y>2294.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate X_9">
+        <x>0.000000000</x>
+        <y>2486.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
     <element name="Rotate Y">
         <x>0.000000000</x>
         <y>203.000000000</y>
         <width>1024.000000000</width>
-        <height>147.000000000</height>
+        <height>146.000000000</height>
+    </element>
+    <element name="Rotate Y_0">
+        <x>0.000000000</x>
+        <y>822.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_1">
+        <x>0.000000000</x>
+        <y>1014.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_10">
+        <x>0.000000000</x>
+        <y>2742.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_11">
+        <x>0.000000000</x>
+        <y>2934.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_12">
+        <x>0.000000000</x>
+        <y>3126.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_13">
+        <x>0.000000000</x>
+        <y>3318.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_14">
+        <x>0.000000000</x>
+        <y>3510.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_15">
+        <x>0.000000000</x>
+        <y>3702.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_16">
+        <x>0.000000000</x>
+        <y>3894.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_17">
+        <x>0.000000000</x>
+        <y>4086.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_18">
+        <x>0.000000000</x>
+        <y>4278.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_19">
+        <x>0.000000000</x>
+        <y>4470.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_2">
+        <x>0.000000000</x>
+        <y>1206.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_20">
+        <x>0.000000000</x>
+        <y>4662.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_21">
+        <x>0.000000000</x>
+        <y>4854.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_22">
+        <x>0.000000000</x>
+        <y>5046.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_23">
+        <x>0.000000000</x>
+        <y>5238.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_24">
+        <x>0.000000000</x>
+        <y>5430.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_25">
+        <x>0.000000000</x>
+        <y>5622.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_26">
+        <x>0.000000000</x>
+        <y>5814.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_27">
+        <x>0.000000000</x>
+        <y>6006.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_3">
+        <x>0.000000000</x>
+        <y>1398.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_4">
+        <x>0.000000000</x>
+        <y>1590.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_5">
+        <x>0.000000000</x>
+        <y>1782.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_6">
+        <x>0.000000000</x>
+        <y>1974.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_7">
+        <x>0.000000000</x>
+        <y>2166.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_8">
+        <x>0.000000000</x>
+        <y>2358.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Rotate Y_9">
+        <x>0.000000000</x>
+        <y>2550.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
     </element>
     <element name="Zoom">
         <x>0.000000000</x>
-        <y>374.000000000</y>
+        <y>373.000000000</y>
         <width>1024.000000000</width>
         <height>361.000000000</height>
+    </element>
+    <element name="Zoom_0">
+        <x>0.000000000</x>
+        <y>886.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_1">
+        <x>0.000000000</x>
+        <y>1078.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_10">
+        <x>0.000000000</x>
+        <y>2806.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_11">
+        <x>0.000000000</x>
+        <y>2998.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_12">
+        <x>0.000000000</x>
+        <y>3190.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_13">
+        <x>0.000000000</x>
+        <y>3382.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_14">
+        <x>0.000000000</x>
+        <y>3574.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_15">
+        <x>0.000000000</x>
+        <y>3766.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_16">
+        <x>0.000000000</x>
+        <y>3958.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_17">
+        <x>0.000000000</x>
+        <y>4150.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_18">
+        <x>0.000000000</x>
+        <y>4342.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_19">
+        <x>0.000000000</x>
+        <y>4534.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_2">
+        <x>0.000000000</x>
+        <y>1270.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_20">
+        <x>0.000000000</x>
+        <y>4726.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_21">
+        <x>0.000000000</x>
+        <y>4918.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_22">
+        <x>0.000000000</x>
+        <y>5110.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_23">
+        <x>0.000000000</x>
+        <y>5302.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_24">
+        <x>0.000000000</x>
+        <y>5494.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_25">
+        <x>0.000000000</x>
+        <y>5686.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_26">
+        <x>0.000000000</x>
+        <y>5878.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_27">
+        <x>0.000000000</x>
+        <y>6070.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_3">
+        <x>0.000000000</x>
+        <y>1462.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_4">
+        <x>0.000000000</x>
+        <y>1654.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_5">
+        <x>0.000000000</x>
+        <y>1846.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_6">
+        <x>0.000000000</x>
+        <y>2038.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_7">
+        <x>0.000000000</x>
+        <y>2230.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_8">
+        <x>0.000000000</x>
+        <y>2422.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="Zoom_9">
+        <x>0.000000000</x>
+        <y>2614.000000000</y>
+        <width>1024.000000000</width>
+        <height>40.000000000</height>
     </element>
 </positions>

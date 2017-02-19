@@ -1,7 +1,10 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxGui.h"
 #include "ofxTimeline.h"
+#include "ofxPowerMate.h"
+#include <vector>
 
 
 class ofApp : public ofBaseApp{
@@ -26,10 +29,53 @@ class ofApp : public ofBaseApp{
     ofLight light;
     
     ofxTimeline timeline;
+    vector<ofxTLKeyframe*> keyframes;
+    ofxTLKeyframe* frames = new ofxTLKeyframe();
     ofSpherePrimitive faithBall;
     ofImage faithImage;
     ofEasyCam easyCam;
     ofVideoPlayer final;
+    vector<int> stored;
+    
+    ofxXmlSettings settings;
+    
+//    //    ofFile imageSaveLocation;
+//    
+//    ofImage screenGrab;
+//    //LIVE VIDEO CAMERA
+//    ofVideoGrabber cameraLive;
+//    int camWidth;
+//    int camHeight;
+//    
+//    //OFX GUI
+//    ofxPanel primePanel;
+//    ofxIntSlider rortatePushPop;
+//    ofxIntSlider xShift;
+//    ofxIntSlider yShift;
+//    
+//    ofxIntSlider anotherRotation;
+//    ofxIntSlider xShift2;
+//    ofxIntSlider yShift2;
+//    
+//    ofxIntSlider brillo;
+//    ofxButton clear;
+//    ofxButton save;
+//    //DRAWING TOOL
+//    ofImage slit;
+//    
+//    //DRAWING SURFACE
+//    ofFbo fullScan;
+//    
+    //POWER-MATE
+    void onPowerMateData(powerData& d);
+    ofxPowerMate powerMate;
+    
+    
+    int slitHistoryI;
+    int globalSpinVol;
+    int globalClick;
+    
+    int buttonClickTracker;
 
 		
 };
