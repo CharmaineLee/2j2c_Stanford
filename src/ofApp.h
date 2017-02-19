@@ -75,7 +75,7 @@ class ofApp : public ofBaseApp{
     float globalSpinVol;
     int globalClick;
     
-    //int buttonClickTracker;
+    int buttonClickTracker;
     
     //VARS FROM OSC
     int zoomVar; //ZOOM VARIABLE, -200,850

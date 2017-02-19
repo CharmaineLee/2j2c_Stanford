@@ -16,7 +16,7 @@ void ofApp::setup(){
     ofEnableSmoothing();
     
     
-    final.load("Test_File.mp4");
+    final.load("360_0096_CLIPCHAMP_keep.mp4");
     faithImage.update();
 
     ofDisableAlphaBlending();
