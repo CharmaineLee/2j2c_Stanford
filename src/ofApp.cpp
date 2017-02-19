@@ -6,7 +6,7 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     ofEnableSmoothing();
     
-    final.load("final.mp4");
+    final.load("Main_Video.mp4");
     faithImage.update();
 
     ofDisableAlphaBlending();
