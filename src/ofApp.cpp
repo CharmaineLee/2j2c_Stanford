@@ -51,7 +51,7 @@ void ofApp::update(){
     if (globalSpinVol == 0) {
         frames->value = globalSpinVol;
     } else {
-        frames->value = 1/globalSpinVol;
+        frames->value = (float) 1/globalSpinVol;
     }
     
     keyframes.push_back(frames);
