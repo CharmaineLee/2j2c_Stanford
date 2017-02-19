@@ -1,7 +1,6 @@
 ofxAudioDecoder
 ofxGui
 ofxMSATimer
-ofxPowerMate
 ofxRange
 ofxTextInputField
 ofxTimecode
