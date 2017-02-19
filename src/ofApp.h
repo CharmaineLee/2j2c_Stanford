@@ -4,7 +4,7 @@
 #include "ofxGui.h"
 #include "ofxTimeline.h"
 #include "ofxPowerMate.h"
-#include "ofxTLEmptyKeyframes.h"
+#include <vector>
 
 
 class ofApp : public ofBaseApp{
@@ -29,13 +29,16 @@ class ofApp : public ofBaseApp{
     ofLight light;
     
     ofxTimeline timeline;
-    ofxTLEmptyKeyframe keyframe;
+    vector<ofxTLKeyframe*> keyframes;
+    ofxTLKeyframe* frames = new ofxTLKeyframe();
     ofSpherePrimitive faithBall;
     ofImage faithImage;
     ofEasyCam easyCam;
     ofVideoPlayer final;
+    vector<int> stored;
     
     ofxXmlSettings settings;
+    
 //    //    ofFile imageSaveLocation;
 //    
 //    ofImage screenGrab;
@@ -71,6 +74,8 @@ class ofApp : public ofBaseApp{
     int slitHistoryI;
     int globalSpinVol;
     int globalClick;
+    
+    int buttonClickTracker;
 
 		
 };
