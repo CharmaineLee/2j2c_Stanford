@@ -168,6 +168,18 @@
         <value>0.000000000</value>
     </key>
     <key>
+        <easefunc>1</easefunc>
+        <easetype>0</easetype>
+        <time>00:01:16:100</time>
+        <value>0.068027198</value>
+    </key>
+    <key>
+        <easefunc>0</easefunc>
+        <easetype>0</easetype>
+        <time>00:01:17:734</time>
+        <value>0.353741467</value>
+    </key>
+    <key>
         <easefunc>0</easefunc>
         <easetype>0</easetype>
         <time>00:01:20:014</time>
@@ -182,8 +194,8 @@
     <key>
         <easefunc>0</easefunc>
         <easetype>0</easetype>
-        <time>00:01:24:880</time>
-        <value>0.224489808</value>
+        <time>00:01:24:480</time>
+        <value>0.233489826</value>
     </key>
     <key>
         <easefunc>0</easefunc>
@@ -200,20 +212,32 @@
     <key>
         <easefunc>0</easefunc>
         <easetype>0</easetype>
+        <time>00:01:27:285</time>
+        <value>0.561643839</value>
+    </key>
+    <key>
+        <easefunc>0</easefunc>
+        <easetype>0</easetype>
         <time>00:01:30:074</time>
         <value>0.190476179</value>
     </key>
     <key>
         <easefunc>0</easefunc>
         <easetype>0</easetype>
-        <time>00:01:35:595</time>
-        <value>0.530612230</value>
+        <time>00:01:35:594</time>
+        <value>0.021619618</value>
     </key>
     <key>
         <easefunc>0</easefunc>
         <easetype>0</easetype>
         <time>00:01:38:096</time>
         <value>0.673469424</value>
+    </key>
+    <key>
+        <easefunc>0</easefunc>
+        <easetype>0</easetype>
+        <time>00:01:39:395</time>
+        <value>0.540612102</value>
     </key>
     <key>
         <easefunc>0</easefunc>
@@ -238,6 +262,12 @@
         <easetype>0</easetype>
         <time>00:01:46:513</time>
         <value>0.564625859</value>
+    </key>
+    <key>
+        <easefunc>0</easefunc>
+        <easetype>0</easetype>
+        <time>00:01:47:617</time>
+        <value>0.408163249</value>
     </key>
     <key>
         <easefunc>0</easefunc>

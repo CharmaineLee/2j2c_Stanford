@@ -1,4 +1,5 @@
 #include "ofApp.h"
+#include "ofxTLEmptyKeyframes.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -6,7 +7,7 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     ofEnableSmoothing();
     
-    final.load("Main_Video.mp4");
+    final.load("Test_File.mp4");
     faithImage.update();
 
     ofDisableAlphaBlending();
@@ -29,26 +30,28 @@ void ofApp::setup(){
     timeline.addCurves("Rotate X", ofRange(0, 360));
     timeline.addCurves("Rotate Y", ofRange(0, 360));
     timeline.addCurves("Zoom",     ofRange(-200,850));
-    
-    //Flags are little markers that you can attach text to
-    //They are only useful when listening to bangFired() events
-    //so that you know when one has passed
-    //timeline.addColors("Colors");
-    
-    //setting framebased to true results in the timeline never skipping frames
-    //and also speeding up with the
-    //try setting this to true and see the difference
-    timeline.setFrameBased(false);
 
-
+    //POWER-MATE
+    powerMate.conecta();
+    ofAddListener(powerMate.tengoInfo, this, &ofApp::onPowerMateData);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     final.update();
-
-
 }
+
+void ofApp::onPowerMateData(powerData& d){ // Big thanks to Aman Tiwari for helping me decode ofxPowerMate
+    // button click
+//    if (d.presionado == 1) {
+//        slitHistoryI = slitHistoryI + 1;
+//    }
+//    
+    globalSpinVol = globalSpinVol + d.rollVar;
+   // globalClick = d.presionado;
+}
+
+
 
 //--------------------------------------------------------------
 void ofApp::draw(){
@@ -70,10 +73,10 @@ void ofApp::draw(){
         ofPushMatrix();
         {
             float zoomAmount = timeline.getValue("Zoom");
-            ofTranslate(ofGetWidth()/2.0, ofGetHeight()/2.0, zoomAmount);
+            ofTranslate(ofGetWidth()/2.0, ofGetHeight()/2.0, globalSpinVol); // zoom amount 
             
             //Read the values out of the timeline and use them to change the viewport rotation
-            ofRotate(timeline.getValue("Rotate X"), 1, 0, 0);
+            ofRotate(globalSpinVol, 1, 0, 0);
             ofRotate(timeline.getValue("Rotate Y"), 0, 1, 0);
             
             ofSetColor(255,255,255);
