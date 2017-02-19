@@ -4,9 +4,10 @@
 #include <iostream>
 #include <fstream>
 
+
 //--------------------------------------------------------------
 void ofApp::setup(){
-    //GUI
+//    //GUI
     GUI.setup();
     GUI.add(xRotation.setup("X Rotation: ", 0, 0, 360));
     GUI.add(yRotation.setup("Y Rotation: ", 0, 0, 360));
@@ -17,10 +18,7 @@ void ofApp::setup(){
     //    GUI.add(pause.setup("Pause Video"));
     
     //OSC SETUP
-    //--------------------
-    //--------------------
-    //--------------------
-    //--------------------
+//    receiver.setup(9000);
     
     std::clock_t start;
     double duration;
@@ -59,19 +57,19 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    if (stop_and_PlayBack == true) {//loads XML file
+    if (stop_and_PlayBack == true && buttonClickTracker == 0) {//loads XML file
+        std::cout << "LOL!!!!" << std::endl;
         timeline.addCurves("Rotate X", ofRange(0, 360));
         timeline.addCurves("Rotate Y", ofRange(0, 360));
         timeline.addCurves("Zoom",     ofRange(-200,850));
         buttonClickTracker = 1;
-    } else {
-        timeline.clear();
+    } else if (stop_and_PlayBack == false) {
+        timeline.reset();
+        buttonClickTracker = 0;
     }
     
     //OSC RECIEVING LOOP
-    //--------------------
-    //--------------------
-    //--------------------
+
     
     ofxTLKeyframe* rotationXframe = new ofxTLKeyframe();
     ofxTLKeyframe* rotationYframe = new ofxTLKeyframe();
@@ -94,7 +92,6 @@ void ofApp::update(){
     //    apple.time = 0;
     //    apple.value = 1.1;
 
-
     ofxTLKeyframes ben;
 
     string xRotXML = ben.getXMLStringForKeyframes(rotationXkeyframes);
@@ -102,24 +99,24 @@ void ofApp::update(){
     string zoomXML = ben.getXMLStringForKeyframes(zoomkeyframes);
     final.update();
 //    std::cout << "hello world";
-    std::cout << "x" << std::endl;
-    std::cout << xRotXML << std::endl;
-    std::cout << "y" << std::endl;
-    std::cout << yRotXML << std::endl;
-    std::cout << "zooms" << std::endl;
-    std::cout << zoomXML << std::endl;
-    
-    std::ofstream xoutfile ("xRot.xml");
-    xoutfile << xRotXML << std::endl;
-    xoutfile.close();
-    
-    std::ofstream youtfile ("yRot.xml");
-    youtfile << yRotXML << std::endl;
-    youtfile.close();
-    
-    std::ofstream zoomoutfile ("zoom.xml");
-    zoomoutfile << zoomXML << std::endl;
-    zoomoutfile.close();
+//    std::cout << "x" << std::endl;
+//    std::cout << xRotXML << std::endl;
+//    std::cout << "y" << std::endl;
+//    std::cout << yRotXML << std::endl;
+//    std::cout << "zooms" << std::endl;
+//    std::cout << zoomXML << std::endl;
+//
+//    std::ofstream xoutfile ("xRot.xml");
+//    xoutfile << xRotXML << std::endl;
+//    xoutfile.close();
+//    
+//    std::ofstream youtfile ("yRot.xml");
+//    youtfile << yRotXML << std::endl;
+//    youtfile.close();
+//    
+//    std::ofstream zoomoutfile ("zoom.xml");
+//    zoomoutfile << zoomXML << std::endl;
+//    zoomoutfile.close();
 }
 
 //--------------------------------------------------------------
